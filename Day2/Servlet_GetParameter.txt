@@ -1,0 +1,68 @@
+Last Lecture Agenda
+1 Servlet Life Cycle?
+	1 init => only once it is invoked 
+	2 service => doget => It invokes many more time => default doget method is invoked
+	3 destroy => it invoked only once 
+	
+3 How to create servlet project?
+
+servlet interface => generic servlet (init,service,destroy ) => Http Servlet (doget and doPost) => Myservlet 
+
+
+summary & Interview Questions
+1 What is Servlet?
+2 Explain Servlet Life Cycle?
+3 How to get Data from parameter?
+4 How to create servlet project?
+5 How to send response to front end?
+
+Today's Lecture Agenda
+1 Send parameter from html 
+
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		String strUsername= request.getParameter("username");
+		System.out.println("USername is  => "+strUsername);
+		
+		String strPass=request.getParameter("password");
+		System.out.println("Password is  "+strPass);
+}
+2 Database Integration
+
+summary & Interview Questions
+1 How to create servlet project?
+2 How to send response to front end?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

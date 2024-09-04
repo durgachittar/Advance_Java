@@ -1,0 +1,94 @@
+Last Lecture Agenda
+1 Servlet Life Cycle?
+	1 init => only once it is invoked 
+	2 service => doget => It invokes many more time => default doget method is invoked
+	3 destroy => it invoked only once 
+	
+3 How to create servlet project?
+
+servlet interface => generic servlet (init,service,destroy ) => Http Servlet (doget and doPost) => Myservlet 
+
+
+summary & Interview Questions
+1 What is Servlet?
+2 Explain Servlet Life Cycle?
+3 How to get Data from parameter?
+4 How to create servlet project?
+5 How to send response to front end?
+
+Today's Lecture Agenda
+1 Send parameter from html 
+2 Database Integration
+create table user(username varchar(10),password varchar(10));
+insert into user values("sumit","123"); 
+
+summary & Interview Questions
+1 How to create servlet project?
+2 How to send response to front end?
+
+
+Note:
+
+Request Attributes: Use this when you only need to pass data to a specific page (e.g., when forwarding to Welcome.jsp from a servlet).
+
+Java:
+String strusername = (String) session.getAttribute("myusername");
+request.setAttribute("username", strusername);
+request.getRequestDispatcher("Welcome.jsp").forward(request, response);
+
+Welcome.jsp
+
+<p>Welcome, ${username}!</p>
+
+URL Parameters: This is suitable for redirections, especially when you're passing small and non-sensitive data.
+
+Java:
+
+String strusername = (String) session.getAttribute("myusername");
+response.sendRedirect("Welcome.jsp?username=" + URLEncoder.encode(strusername, "UTF-8"));
+
+JSP:
+
+<%
+    String username = request.getParameter("username");
+%>
+<p>Welcome, <%= username %>!</p>
+
+Session Attributes: If the data needs to persist across multiple pages, or if it's already in the session, this is the most straightforward approach.
+
+JAVA:
+
+String strusername = (String) session.getAttribute("myusername");
+response.sendRedirect("Welcome.jsp");
+
+JSP:
+<%
+    String username = (String) session.getAttribute("myusername");
+%>
+<p>Welcome, <%= username %>!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
